@@ -1,5 +1,5 @@
 package calculadora;
-//test class.
+//test class.,
 import java.util.Scanner;
 public class TestRPN {
 	/* metodo main */

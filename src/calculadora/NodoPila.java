@@ -1,5 +1,5 @@
 package calculadora;
-//Clase nodo pila.
+//Clase nodo pila..
 public class NodoPila {
 		public NodoPila abajo;
 		public double dato;
