@@ -1,5 +1,5 @@
 package calculadora;
-//Clase nodo pila
+//Clase nodo pila, last
 /**
  *  Calculadora mediante la notacion polaca inversa.
  * @author Adelin Todirica

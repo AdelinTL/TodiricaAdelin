@@ -42,6 +42,17 @@ public class RPN {
 	 *  
 	 */
 	public double resultado( ) {
+		calculo();
+		double val = popPila( );
+		if(arriba != null) {
+			throw new IllegalArgumentException( );
+		}
+		return val;
+	}
+	/**
+	 * 
+	 */
+	public void calculo() {
 		double a, b;
 		int j;
 		for(int i = 0; i < commando.length( ); i++) {
@@ -86,11 +97,6 @@ public class RPN {
 				throw new IllegalArgumentException( );
 			}
 		}
-		double val = popPila( );
-		if(arriba != null) {
-			throw new IllegalArgumentException( );
-		}
-		return val;
 	}
 	/** convierte el numero a double y lo añade a la pila
 	 * @param temp
@@ -100,5 +106,6 @@ public class RPN {
 		numero = Double.parseDouble(temp);
 		pushPila(numero);
 	}
-
 }
+	
+
