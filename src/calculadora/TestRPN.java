@@ -1,5 +1,11 @@
 package calculadora;
-//test class.
+//test class
+
+/**
+ * clase de comprobación del funcionamiento del programa
+ * @author Adelin
+ * 
+ */
 import java.util.Scanner;
 public class TestRPN {
 	/* metodo main */

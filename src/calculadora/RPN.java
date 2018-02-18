@@ -1,5 +1,5 @@
 package calculadora;
-/* .
+/* 
 Objetivo: Obtener código refactorizado a partir de otro que no lo está.
 Tarea: Para esta tarea, se refactorizará un programa mal escrito, sin
 cambiar la forma en que funciona el programa. Este programa, RPN.java
@@ -19,15 +19,28 @@ public class RPN {
 		NodoPila nuevo_nodo = new NodoPila(nuevo_dato, arriba);
 		arriba = nuevo_nodo;
 	}
+	/** 
+	 * Desapila un elemento a la pila, retirándolo de la misma.
+	 * @return dato_arriba
+	 */
 	public double popPila( ) {
 		double dato_arriba = arriba.dato;
 		arriba = arriba.abajo;
 		return dato_arriba;
 	}
+	/**
+	 *  Introduce un comando.
+	 * @param commando
+	 */
 	public RPN(String commando) {
 		arriba = null;
 		this.commando = commando;
 	}
+	/**
+	 * Recorre el comando y realiza la operación si las comprobaciones se han realizado correctamente.
+	 * @return el resultado de la operación  de tipo double
+	 *  
+	 */
 	public double resultado( ) {
 		double a, b;
 		int j;
@@ -43,8 +56,7 @@ public class RPN {
 							charAt(i));
 				}
 				// convertir a double y añadir a la pila
-				numero = Double.parseDouble(temp);
-				pushPila(numero);
+				convertToDouble(temp);
 			} else if(commando.charAt(i) == '+') {
 				b = popPila( );
 				a = popPila( );
@@ -79,6 +91,14 @@ public class RPN {
 			throw new IllegalArgumentException( );
 		}
 		return val;
+	}
+	/** convierte el numero a double y lo añade a la pila
+	 * @param temp
+	 */
+	public void convertToDouble(String temp) {
+		double numero;
+		numero = Double.parseDouble(temp);
+		pushPila(numero);
 	}
 
 }
