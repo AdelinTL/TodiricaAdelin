@@ -11,16 +11,10 @@ poner los paréntesis para alterar la prioridad)
  Se debe reorganizar este código usando al menos tres de las reglas
 vistas en clase.
  */
-class NodoPila {
-	public NodoPila abajo;
-	public double dato;
-	public NodoPila(double dato, NodoPila abajo) {
-		this.dato = dato;
-		this.abajo = abajo;
-	}
-}
 
 public class RPN {
+	private String commando;
+	private NodoPila arriba;
 	public void pushPila(double nuevo_dato) {
 		NodoPila nuevo_nodo = new NodoPila(nuevo_dato, arriba);
 		arriba = nuevo_nodo;
@@ -86,6 +80,5 @@ public class RPN {
 		}
 		return val;
 	}
-	private String commando;
-	private NodoPila arriba;
+
 }
